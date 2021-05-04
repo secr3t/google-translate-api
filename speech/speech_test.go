@@ -1,7 +1,7 @@
 package speech
 
 import (
-	"github.com/dangxia/google-translate-api/ctx"
+	"github.com/secr3t/google-translate-api/ctx"
 	"os"
 	"path/filepath"
 	"testing"

@@ -23,22 +23,22 @@ type translateApi struct {
 	Ctx ctx.Context
 }
 
-func (me *translateApi) GetCtx() ctx.Context {
-	return me.Ctx
+func (a *translateApi) GetCtx() ctx.Context {
+	return a.Ctx
 }
 
-func (me *translateApi) CreateTranslator(text string) (Translator, error) {
-	return me.CreateLangTranslator(text, me.Ctx.DefaultSourceLang())
+func (a *translateApi) CreateTranslator(text string) (Translator, error) {
+	return a.CreateLangTranslator(text, a.Ctx.DefaultSourceLang())
 }
 
-func (me *translateApi) CreateLangTranslator(text, lang string) (Translator, error) {
+func (a *translateApi) CreateLangTranslator(text, lang string) (Translator, error) {
 	lang = strings.ToLower(lang)
-	if err := me.Ctx.IsSupported(lang); err != nil {
+	if err := a.Ctx.IsSupported(lang); err != nil {
 		return nil, err
 	}
 
 	return &translator{
-		ctx:  me.Ctx,
+		ctx:  a.Ctx,
 		text: text,
 		lang: lang,
 	}, nil

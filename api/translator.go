@@ -23,22 +23,22 @@ type translator struct {
 	lang string
 }
 
-func (me *translator) Translate() (translation.Translation, error) {
-	return me.TranslateTo(me.ctx.DefaultTargetLang())
+func (t *translator) Translate() (translation.Translation, error) {
+	return t.TranslateTo(t.ctx.DefaultTargetLang())
 }
 
-func (me *translator) TranslateTo(lang string) (translation.Translation, error) {
+func (t *translator) TranslateTo(lang string) (translation.Translation, error) {
 	lang = strings.ToLower(lang)
-	if err := me.ctx.IsSupported(lang); err != nil {
+	if err := t.ctx.IsSupported(lang); err != nil {
 		return nil, err
 	}
-	return translation.NewTranslation(me.lang, lang, me.text, me.ctx), nil
+	return translation.NewTranslation(t.lang, lang, t.text, t.ctx), nil
 }
 
-func (me *translator) Speak() (speech.Speech, error) {
-	return me.SpeakSlowly(me.ctx.DefaultSlowly())
+func (t *translator) Speak() (speech.Speech, error) {
+	return t.SpeakSlowly(t.ctx.DefaultSlowly())
 }
 
-func (me *translator) SpeakSlowly(slowly bool) (speech.Speech, error) {
-	return speech.NewSpeech(me.ctx, me.text, me.lang, slowly), nil
+func (t *translator) SpeakSlowly(slowly bool) (speech.Speech, error) {
+	return speech.NewSpeech(t.ctx, t.text, t.lang, slowly), nil
 }

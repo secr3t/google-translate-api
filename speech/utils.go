@@ -2,13 +2,13 @@ package speech
 
 import (
 	"fmt"
-	"github.com/dangxia/google-translate-api/tokenizer"
+	"github.com/secr3t/google-translate-api/tokenizer"
 	"regexp"
 	"strings"
 )
 
 var (
-	blank = regexp.MustCompile(fmt.Sprintf("^[%s]*$", regexp.QuoteMeta(tokenizer.ALL_PUNC)))
+	blank = regexp.MustCompile(fmt.Sprintf("^[%s]*$", regexp.QuoteMeta(tokenizer.AllPunc)))
 )
 
 func cleanTokens(tokens []string) []string {

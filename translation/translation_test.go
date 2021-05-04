@@ -1,7 +1,7 @@
 package translation
 
 import (
-	"github.com/dangxia/google-translate-api/ctx"
+	"github.com/secr3t/google-translate-api/ctx"
 	"strings"
 	"testing"
 )
