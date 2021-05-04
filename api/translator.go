@@ -1,9 +1,9 @@
 package api
 
 import (
-	"github.com/dangxia/google-translate-api/ctx"
-	"github.com/dangxia/google-translate-api/speech"
-	"github.com/dangxia/google-translate-api/translation"
+	"github.com/secr3t/google-translate-api/ctx"
+	"github.com/secr3t/google-translate-api/speech"
+	"github.com/secr3t/google-translate-api/translation"
 	"strings"
 )
 
